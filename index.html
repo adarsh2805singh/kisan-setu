@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kisan Setu - Buy Crops, Vegetables, Dairy Products</title>
 	<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<>
 	<div class="header">
 		<div class="header-left">
-			<a href="#signin" class="signin">Sign In</a>
-			<div class="logo">Kisan Setu</div>
-		</div>
+    <a href="#signin" class="signin">Sign In</a>
+    <div class="logo">Kisan Setu</div>
+</div>
+<div class="cart-icon">
+    🛒 Cart (<span id="cart-count">0</span>)
+</div>
 		<div class="nav">
 			<div><a href="#crops">Crops</a></div>
 			<div><a href="#vegetables">Seasonal Vegetables</a></div>
@@ -23,6 +26,7 @@
 			<button>Search</button>
 		</div>
 	</div>
+
 	<div class="hero">
 		<div class="hero-intro">
 			<img src="kisan.jpg" alt="Farmer" class="farmer-img">
@@ -34,6 +38,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="main-content">
 		<h2>Featured Products</h2>
 		<div class="product-grid">
@@ -63,12 +68,88 @@
 			</div>
 		</div>
 	</div>
-	<div class="about-us">
+
+    <div id="crops" class="category-section">
+        <h2> Our Best Crops</h2>
+        <p>Explore staple grains, pulses, and oilseeds sourced directly from our registered farmers.</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img crop-img-1">Rice Img</div>
+                <h3>Basmati Rice</h3>
+                <p>Premium aged rice.</p>
+                <button>View Details</button>
+            </div>
+             <div class="product-card">
+                <div class="product-img crop-img-2">Corn Img</div>
+                <h3>Maize (Corn)</h3>
+                <p>High-yield feed and food corn.</p>
+                <button>View Details</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="vegetables" class="category-section secondary-bg">
+        <h2>Seasonal Vegetables</h2>
+        <p>Freshly picked vegetables, delivered to your door within 24 hours of harvest.</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img veg-img-1">Onion Img</div>
+                <h3>Onion</h3>
+                <p>Red, pungent storage onions.</p>
+                <button>View Details</button>
+            </div>
+             <div class="product-card">
+                <div class="product-img veg-img-2">Spinach Img</div>
+                <h3>Spinach</h3>
+                <p>Tender, dark green leaves.</p>
+                <button>View Details</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dairy" class="category-section">
+        <h2>Fresh Dairy Products</h2>
+        <p>Pure, unadulterated milk, cheese, and yogurt from local dairy farms.</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img dairy-img-1">Cheese Img</div>
+                <h3>Paneer (Cottage Cheese)</h3>
+                <p>Soft and fresh, homemade style.</p>
+                <button>View Details</button>
+            </div>
+             <div class="product-card">
+                <div class="product-img dairy-img-2">Yogurt Img</div>
+                <h3>Natural Curd</h3>
+                <p>Thick, probiotic yogurt.</p>
+                <button>View Details</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="contact" class="contact-section secondary-bg">
+        <h2>Contact Kisan Setu</h2>
+        <p>Get in touch with us for bulk orders, farmer registration, or customer support.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    
+    <div class="about-us">
 		<h2>About Us</h2>
 		<p>Kisan Setu is dedicated to supporting farmers and providing customers with the freshest agricultural products. Our mission is to create a transparent, fair, and sustainable marketplace for everyone.</p>
+	</div>
+	
+	<div class="footer">
+		<p>&copy; 2025 Kisan Setu. All rights reserved.</p>
 	</div>
 	<div class="footer">
 		<p>&copy; 2025 Kisan Setu. All rights reserved.</p>
 	</div>
+    
+    <script src="script.js"></script> 
+
 </body>
 </html>
