@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product - Kisan Setu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <button id="open-create" class="create-account header-button">Create Account</button>
+      <button id="open-signin" class="signin header-button">Sign In</button>
+      <div class="logo">Kisan Setu</div>
+    </div>
+    <div class="nav">
+      <div><a class="header-button" href="index.html">Home</a></div>
+      <div><a class="header-button" href="index.html#products">Products</a></div>
+      <div><a class="header-button" href="index.html#how-it-works">How It Works</a></div>
+      <div><a class="header-button" href="index.html#contact">Contact</a></div>
+    </div>
+    <div class="header-right">
+      <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button class="cart header-button" aria-label="View cart">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-badge">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sign-in modal -->
+  <div class="modal" aria-hidden="true">
+    <div class="modal-backdrop" aria-hidden="true"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <h2 id="modal-title">Sign in to Kisan Setu</h2>
+      <form class="signin-form" onsubmit="return false;">
+        <label for="username">Username</label>
+        <input id="username" type="text" required placeholder="Your name or username">
+        <label for="email">Email (optional)</label>
+        <input id="email" type="email" placeholder="you@example.com">
+        <label for="password">Password (optional)</label>
+        <input id="password" type="password" placeholder="Password">
+        <div style="margin-top:12px; text-align:right;">
+          <button type="submit" class="signin-submit">Sign in</button>
+        </div>
+      </form>
+      <p style="font-size:0.9rem; margin-top:8px; color:#666;">(Demo: form does not send data — implement server-side auth as needed.)</p>
+    </div>
+  </div>
+
+  <!-- Create-account modal -->
+  <div class="create-modal" aria-hidden="true">
+    <div class="modal-backdrop" aria-hidden="true"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="create-title">
+      <button class="create-close" aria-label="Close create account">✕</button>
+      <h2 id="create-title">Create an account</h2>
+      <form class="create-form" onsubmit="return false;">
+        <label for="create-username">Username</label>
+        <input id="create-username" type="text" required placeholder="Choose a username">
+        <label for="create-email">Email</label>
+        <input id="create-email" type="email" placeholder="you@example.com">
+        <label for="create-password">Password (optional)</label>
+        <input id="create-password" type="password" placeholder="Create a password">
+        <div style="margin-top:12px; text-align:right;">
+          <button type="submit" class="create-submit">Create account</button>
+        </div>
+      </form>
+      <p style="font-size:0.9rem; margin-top:8px; color:#666;">(Demo: account stored locally in your browser only.)</p>
+    </div>
+  </div>
+
+  <!-- Cart panel -->
+  <aside class="cart-panel" aria-hidden="true">
+    <div class="cart-backdrop"></div>
+    <div class="cart-content" role="dialog" aria-label="Shopping cart">
+      <button class="cart-close" aria-label="Close cart">✕</button>
+      <h3>Your Cart</h3>
+      <ul class="cart-items">
+        <!-- items injected here -->
+      </ul>
+      <div class="cart-footer">
+        <div class="cart-total">Total: ₹<span class="cart-total-value">0</span></div>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Product Page Content -->
+  <main class="product-page">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> / <span id="breadcrumb-product">Product</span>
+    </div>
+
+    <div class="product-hero">
+      <h1 id="product-title">Product</h1>
+      <p class="product-subtitle">Choose from verified local farmers offering fresh, quality produce</p>
+    </div>
+
+    <div class="offers-container">
+      <h2 class="section-title">Available Offers</h2>
+      <div id="offers-list" class="offers-grid"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Kisan Setu</h3>
+        <p>Connecting farmers directly to consumers for fresh, quality produce.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>📧 info@kisansetu.com</li>
+          <li>📞 +91 1234567890</li>
+          <li>📍 India</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kisan Setu. All rights reserved. Made with 💚 for farmers.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" aria-label="Scroll to top" title="Back to top">
+    ↑
+  </button>
+
+  <script src="main.js" defer></script>
+  <script>
+    // Populate offers based on query param
+    (function(){
+      function qsParam(name) { 
+        const params = new URLSearchParams(location.search); 
+        return params.get(name); 
+      }
+      
+      const product = qsParam('product') || 'Product';
+      const productName = decodeURIComponent(product);
+      
+      document.getElementById('product-title').textContent = productName;
+      document.getElementById('breadcrumb-product').textContent = productName;
+      document.title = `${productName} - Kisan Setu`;
+
+      // Sample farmer offers
+      const SAMPLE_OFFERS = {
+        'Wheat': [
+          { farmer: 'Farmer Ram Singh', location: 'Punjab', img: 'wheat.jpg', qty: '1 kg', price: 40, rating: 4.5 },
+          { farmer: 'Farmer Sita Devi', location: 'Haryana', img: 'wheat.jpg', qty: '5 kg', price: 180, rating: 4.8 },
+          { farmer: 'Farmer Vijay Kumar', location: 'Uttar Pradesh', img: 'wheat.jpg', qty: '25 kg', price: 800, rating: 4.7 }
+        ],
+        'Tomato': [
+          { farmer: 'Farmer Amit Patel', location: 'Gujarat', img: 'tomato.jpg', qty: '1 kg', price: 30, rating: 4.6 },
+          { farmer: 'Farmer Neha Sharma', location: 'Maharashtra', img: 'tomato.jpg', qty: '5 kg', price: 140, rating: 4.9 },
+          { farmer: 'Farmer Rajesh Rao', location: 'Karnataka', img: 'tomato.jpg', qty: '10 kg', price: 270, rating: 4.4 }
+        ],
+        'Dairy': [
+          { farmer: 'Farmer Ramesh Yadav', location: 'Uttar Pradesh', img: 'milk.jpeg', qty: '1 litre Milk', price: 50, rating: 4.7 },
+          { farmer: 'Farmer Geeta Kumari', location: 'Haryana', img: 'milk.jpeg', qty: '500 g Paneer', price: 300, rating: 4.8 },
+          { farmer: 'Farmer Suresh Gowda', location: 'Karnataka', img: 'milk.jpeg', qty: '500 g Ghee', price: 400, rating: 4.9 }
+        ],
+        'Dairy Products': [
+          { farmer: 'Farmer Ramesh Yadav', location: 'Uttar Pradesh', img: 'milk.jpeg', qty: '1 litre Milk', price: 50, rating: 4.7 },
+          { farmer: 'Farmer Geeta Kumari', location: 'Haryana', img: 'milk.jpeg', qty: '500 g Paneer', price: 300, rating: 4.8 },
+          { farmer: 'Farmer Suresh Gowda', location: 'Karnataka', img: 'milk.jpeg', qty: '500 g Ghee', price: 400, rating: 4.9 }
+        ],
+        'Potato': [
+          { farmer: 'Farmer Mohan Lal', location: 'West Bengal', img: 'potato.jpg', qty: '1 kg', price: 20, rating: 4.5 },
+          { farmer: 'Farmer Anita Singh', location: 'Bihar', img: 'potato.jpg', qty: '5 kg', price: 90, rating: 4.6 }
+        ],
+        'Pulses': [
+          { farmer: 'Farmer Krishna Reddy', location: 'Telangana', img: 'pulses.webp', qty: '1 kg', price: 120, rating: 4.8 },
+          { farmer: 'Farmer Lakshmi Iyer', location: 'Tamil Nadu', img: 'pulses.webp', qty: '5 kg', price: 580, rating: 4.7 }
+        ],
+        'Rice': [
+          { farmer: 'Farmer Balaji Naidu', location: 'Andhra Pradesh', img: 'rice.jpg', qty: '1 kg', price: 60, rating: 4.9 },
+          { farmer: 'Farmer Savitri Devi', location: 'West Bengal', img: 'rice.jpg', qty: '5 kg', price: 280, rating: 4.6 }
+        ],
+        'Onion': [
+          { farmer: 'Farmer Prakash Desai', location: 'Maharashtra', img: 'onion.jpg', qty: '1 kg', price: 35, rating: 4.4 },
+          { farmer: 'Farmer Radha Bai', location: 'Karnataka', img: 'onion.jpg', qty: '5 kg', price: 160, rating: 4.7 }
+        ],
+        'Vegetables': [
+          { farmer: 'Farmer Sunil Kumar', location: 'Punjab', img: 'vegetables.jpg', qty: '1 kg Mixed Vegetables', price: 70, rating: 4.6 },
+          { farmer: 'Farmer Maya Devi', location: 'Haryana', img: 'vegetables.jpg', qty: 'Vegetable Box (assorted)', price: 220, rating: 4.8 }
+        ]
+      };
+
+      const offers = SAMPLE_OFFERS[productName] || [
+        { farmer: 'Local Farmer', location: 'India', img: 'vegetables.jpg', qty: '1 kg', price: 50, rating: 4.5 }
+      ];
+      
+      const list = document.getElementById('offers-list');
+      
+      if (offers.length === 0) {
+        list.innerHTML = '<p style="text-align:center; padding:40px; color:#666;">No offers available for this product yet.</p>';
+        return;
+      }
+
+      offers.forEach(offer => {
+        const card = document.createElement('div');
+        card.className = 'offer-card';
+        
+        const stars = '⭐'.repeat(Math.floor(offer.rating));
+        
+        card.innerHTML = `
+          <div class="offer-image">
+            <img src="${offer.img}" alt="${productName} from ${offer.farmer}" loading="lazy" onerror="this.src='vegetables.jpg'">
+          </div>
+          <div class="offer-details">
+            <div class="offer-header">
+              <h3>${offer.farmer}</h3>
+              <div class="offer-rating">${stars} ${offer.rating}</div>
+            </div>
+            <div class="offer-location">📍 ${offer.location}</div>
+            <div class="offer-quantity">${offer.qty}</div>
+            <div class="offer-footer">
+              <div class="offer-price">₹${offer.price}</div>
+              <button class="offer-add-btn" data-id="${productName}|${offer.farmer}|${offer.qty}" data-price="${offer.price}" data-title="${productName} - ${offer.qty} (${offer.farmer})">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        `;
+        
+        list.appendChild(card);
+        
+        const addBtn = card.querySelector('.offer-add-btn');
+        addBtn.addEventListener('click', function() {
+          const id = this.dataset.id;
+          const price = parseFloat(this.dataset.price);
+          const title = this.dataset.title;
+          
+          // Add to cart using same localStorage format
+          const cart = JSON.parse(localStorage.getItem('kisan_cart') || '[]');
+          const existing = cart.find(item => item.id === id);
+          
+          if (existing) {
+            existing.qty = (existing.qty || 1) + 1;
+          } else {
+            cart.push({ id, title, price, qty: 1 });
+          }
+          
+          localStorage.setItem('kisan_cart', JSON.stringify(cart));
+          
+          // Refresh cart UI if available
+          if (window.kisanCart && typeof window.kisanCart.refresh === 'function') {
+            window.kisanCart.refresh();
+          }
+          
+          // Visual feedback
+          this.disabled = true;
+          const originalText = this.textContent;
+          this.textContent = 'Added ✓';
+          this.style.background = '#43a047';
+          
+          setTimeout(() => {
+            this.textContent = originalText;
+            this.disabled = false;
+            this.style.background = '';
+          }, 1500);
+          
+          // Show notification if function exists
+          if (typeof showNotification === 'function') {
+            showNotification('Added to cart!', 'success');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

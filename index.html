@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kisan Setu - Buy Crops, Vegetables, Dairy Products</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="header">
+		<div class="header-left">
+			<button id="open-create" class="create-account header-button">Create Account</button>
+			<button id="open-signin" class="signin header-button">Sign In</button>
+			<div class="logo">Kisan Setu</div>
+		</div>
+		<div class="nav">
+			<div><a class="header-button" href="#crops">Crops</a></div>
+			<div><a class="header-button" href="#vegetables">Vegetables</a></div>
+			<div><a class="header-button" href="#dairy">Dairy Products</a></div>
+			<div><a class="header-button" href="#contact">Contact</a></div>
+		</div>
+		<div class="header-right">
+			<!-- Mobile nav toggle (shown on small screens) -->
+			<button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+			<div class="search-bar">
+				<input type="text" placeholder="Search products...">
+				<button>Search</button>
+			</div>
+			<!-- Cart button: shows cart icon and item count badge -->
+			<button class="cart header-button" aria-label="View cart">
+				<span class="cart-icon">🛒</span>
+				<span class="cart-badge">0</span>
+			</button>
+		</div>
+	</div>
+
+	<!-- Sign-in modal (hidden by default) -->
+	<div class="modal" aria-hidden="true">
+		<div class="modal-backdrop" aria-hidden="true"></div>
+		<div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+			<button class="modal-close" aria-label="Close modal">✕</button>
+			<h2 id="modal-title">Sign in to Kisan Setu</h2>
+			<form class="signin-form" onsubmit="return false;">
+				<label for="username">Username</label>
+				<input id="username" type="text" required placeholder="Your name or username">
+				<label for="email">Email (optional)</label>
+				<input id="email" type="email" placeholder="you@example.com">
+				<label for="password">Password (optional)</label>
+				<input id="password" type="password" placeholder="Password">
+				<div style="margin-top:12px; text-align:right;">
+					<button type="submit" class="signin-submit">Sign in</button>
+				</div>
+			</form>
+			<p style="font-size:0.9rem; margin-top:8px; color:#666;">(Demo: form does not send data — implement server-side auth as needed.)</p>
+		</div>
+	</div>
+
+	<!-- Create-account modal (hidden by default) -->
+	<div class="create-modal" aria-hidden="true">
+		<div class="modal-backdrop" aria-hidden="true"></div>
+		<div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="create-title">
+			<button class="create-close" aria-label="Close create account">✕</button>
+			<h2 id="create-title">Create an account</h2>
+			<form class="create-form" onsubmit="return false;">
+				<label for="create-username">Username</label>
+				<input id="create-username" type="text" required placeholder="Choose a username">
+				<label for="create-email">Email</label>
+				<input id="create-email" type="email" placeholder="you@example.com">
+				<label for="create-password">Password (optional)</label>
+				<input id="create-password" type="password" placeholder="Create a password">
+				<div style="margin-top:12px; text-align:right;">
+					<button type="submit" class="create-submit">Create account</button>
+				</div>
+			</form>
+			<p style="font-size:0.9rem; margin-top:8px; color:#666;">(Demo: account stored locally in your browser only.)</p>
+		</div>
+	</div>
+	<div class="hero">
+		<div class="hero-intro">
+			<div class="hero-content">
+				<div class="hero-badge">🌾 Farm to Table Marketplace</div>
+				<h1>Buy Fresh Produce<br><span class="highlight">Directly From Farmers</span></h1>
+				<p class="hero-subtitle">Skip the middlemen. Get organic vegetables, grains, and dairy delivered fresh from local farms to your doorstep.</p>
+				<div class="hero-cta">
+					<a href="#products" class="cta-primary">Shop Now</a>
+					<a href="#how-it-works" class="cta-secondary">How It Works</a>
+				</div>
+				<div class="trust-indicators">
+					<div class="trust-item">
+						<span class="trust-icon">✓</span>
+						<span>100% Fresh</span>
+					</div>
+					<div class="trust-item">
+						<span class="trust-icon">✓</span>
+						<span>Direct From Farm</span>
+					</div>
+					<div class="trust-item">
+						<span class="trust-icon">✓</span>
+						<span>Fair Prices</span>
+					</div>
+				</div>
+			</div>
+			<div class="hero-image">
+				<img src="kisan.jpg" alt="Fresh produce from local farmers" class="farmer-img">
+			</div>
+		</div>
+	</div>
+	
+	<!-- How It Works Section -->
+	<section class="how-it-works" id="how-it-works">
+		<h2>How Kisan Setu Works</h2>
+		<div class="steps-container">
+			<div class="step-card">
+				<div class="step-number">1</div>
+				<h3>Browse Products</h3>
+				<p>Explore fresh vegetables, grains, dairy, and more from verified local farmers</p>
+			</div>
+			<div class="step-card">
+				<div class="step-number">2</div>
+				<h3>Add to Cart</h3>
+				<p>Select your favorite items and quantities. See transparent pricing with no hidden fees</p>
+			</div>
+			<div class="step-card">
+				<div class="step-number">3</div>
+				<h3>Get Delivered</h3>
+				<p>Receive farm-fresh produce at your doorstep. Support local farmers directly</p>
+			</div>
+		</div>
+	</section>
+	<div class="main-content">
+		<h2 class="section-title" id="products">Shop Fresh Farm Products</h2>
+		<p class="section-subtitle">Premium quality produce delivered directly from local farms</p>
+		<div class="product-grid">
+			<div class="product-card" data-price="120">
+				<div class="product-img">
+					<img src="wheat.jpg" alt="Fresh wheat grains" />
+				</div>
+				<h3>Wheat</h3>
+				<p>Freshly harvested wheat grains.</p>
+				<div class="price-hint">From ₹40/kg</div>
+				<button class="explore-btn" aria-label="Explore wheat products">Explore</button>
+			</div>
+			<div class="product-card">
+				<div class="product-img">
+					<img src="tomato.jpg" alt="Fresh organic tomatoes" loading="lazy" />
+				</div>
+				<h3>Tomato</h3>
+				<p>Seasonal, organic tomatoes.</p>
+				<div class="price-hint">From ₹30/kg</div>
+				<button class="explore-btn" aria-label="Explore tomato products">Explore</button>
+			</div>
+			<div class="product-card" id="dairy-card">
+				<div class="product-img">
+					<img src="milk.jpeg" alt="Fresh dairy products from local farmers" loading="lazy" onerror="this.style.display='none'" />
+				</div>
+				<h3>Dairy Products</h3>
+				<p>Fresh dairy from local farmers.</p>
+				<div class="price-hint">From ₹50/liter</div>
+				<button class="explore-btn" aria-label="Explore dairy products">Explore</button>
+			</div>
+			<div class="product-card">
+				<div class="product-img">
+					<img src="potato.jpg" alt="Farm-fresh potatoes" loading="lazy" />
+				</div>
+				<h3>Potato</h3>
+				<p>Farm-fresh potatoes.</p>
+				<div class="price-hint">From ₹20/kg</div>
+				<button class="explore-btn" aria-label="Explore potato products">Explore</button>
+			</div>
+			<div class="product-card">
+				<div class="product-img">
+					<img src="pulses.webp" alt="High-quality organic pulses" />
+				</div>
+				<h3>Pulses</h3>
+				<p>High-quality, organic pulses.</p>
+				<div class="price-hint">From ₹120/kg</div>
+				<button class="explore-btn" aria-label="Explore pulse products">Explore</button>
+			</div>
+			<div class="product-card">
+				<div class="product-img">
+					<img src="rice.jpg" alt="Organic long-grain rice" loading="lazy" />
+				</div>
+				<h3>Rice</h3>
+				<p>Organic, long-grain rice.</p>
+				<div class="price-hint">From ₹60/kg</div>
+				<button class="explore-btn" aria-label="Explore rice products">Explore</button>
+			</div>
+			<div class="product-card">
+				<div class="product-img">
+					<img src="onion.jpg" alt="Fresh organic onions" loading="lazy" onerror="this.style.display='none'" />
+				</div>
+				<h3>Onion</h3>
+				<p>Fresh, organic onions.</p>
+				<div class="price-hint">From ₹35/kg</div>
+				<button class="explore-btn" aria-label="Explore onion products">Explore</button>
+			</div>
+			<div class="product-card" id="vegetables">
+				<div class="product-img">
+					<img src="vegetables.jpg" alt="Farm-fresh assorted vegetables" loading="lazy" />
+				</div>
+				<h3>Vegetables</h3>
+				<p>Farm-fresh assorted vegetables.</p>
+				<div class="price-hint">From ₹70/kg</div>
+				<button class="explore-btn" aria-label="Explore vegetable products">Explore</button>
+			</div>
+		
+		</div>
+
+		<!-- Farmers around the world: informational section -->
+		<section class="farmers-world">
+			<h2>Farmers Around the World</h2>
+			<div class="farmers-box">
+				<div class="farmers-cards">
+				<div class="fw-card">
+					<h3>Smallholder Farmers</h3>
+					<p>Approximately 500 million smallholder farms worldwide produce a significant share of the world's food, often using family labor and traditional knowledge.</p>
+				</div>
+				<div class="fw-card">
+					<h3>Sustainable Practices</h3>
+					<p>Many farmers are adopting methods like crop rotation, agroforestry, and integrated pest management to protect soil and biodiversity.</p>
+				</div>
+				<div class="fw-card">
+					<h3>Challenges Faced</h3>
+					<p>Farmers face climate risks, market volatility, and access to credit and inputs. Supporting local markets and fair trade helps resilience.</p>
+				</div>
+					<div class="fw-card">
+					<h3>Technology & Innovation</h3>
+					<p>Digital tools, mobile advisories, and improved seeds are helping farmers increase yields and reduce waste, especially when training and access are available.</p>
+				</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- Contact Section -->
+	<section class="contact-section" id="contact">
+		<h2>Get In Touch</h2>
+		<p class="contact-subtitle">Have questions? We'd love to hear from you!</p>
+		<div class="contact-grid">
+			<div class="contact-card">
+				<div class="contact-icon">📧</div>
+				<h3>Email Us</h3>
+				<p>info@kisansetu.com</p>
+			</div>
+			<div class="contact-card">
+				<div class="contact-icon">📞</div>
+				<h3>Call Us</h3>
+				<p>+91 1234567890</p>
+			</div>
+			<div class="contact-card">
+				<div class="contact-icon">💬</div>
+				<h3>WhatsApp</h3>
+				<p>Message us anytime</p>
+			</div>
+		</div>
+	</section>
+
+					</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- Contact Section -->
+	<aside class="cart-panel" aria-hidden="true">
+		<div class="cart-backdrop"></div>
+		<div class="cart-content" role="dialog" aria-label="Shopping cart">
+			<button class="cart-close" aria-label="Close cart">✕</button>
+			<h3>Your Cart</h3>
+			<ul class="cart-items">
+				<!-- items injected here -->
+			</ul>
+			<div class="cart-footer">
+				<div class="cart-total">Total: ₹<span class="cart-total-value">0</span></div>
+				<button class="checkout-btn">Checkout</button>
+			</div>
+		</div>
+	</aside>
+
+	<!-- Variants modal: shown when user clicks Explore on a product -->
+	<div class="variants-modal" aria-hidden="true">
+		<div class="variants-backdrop"></div>
+		<div class="variants-panel" role="dialog" aria-modal="true" aria-labelledby="variants-title">
+			<button class="variants-close" aria-label="Close variants">✕</button>
+			<h3 id="variants-title">Variants</h3>
+			<ul class="variants-list">
+				<!-- injected -->
+			</ul>
+		</div>
+	</div>
+	<div class="about-us">
+		<h2>About Us</h2>
+		<p>Kisan Setu is dedicated to supporting farmers and providing customers with the freshest agricultural products. Our mission is to create a transparent, fair, and sustainable marketplace for everyone.</p>
+	</div>
+	
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="footer-section">
+				<h3>Kisan Setu</h3>
+				<p>Connecting farmers directly to consumers for fresh, quality produce.</p>
+			</div>
+			<div class="footer-section">
+				<h4>Quick Links</h4>
+				<ul>
+					<li><a href="#products">Products</a></li>
+					<li><a href="#how-it-works">How It Works</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="#">Terms & Conditions</a></li>
+				</ul>
+			</div>
+			<div class="footer-section">
+				<h4>Contact Us</h4>
+				<ul>
+					<li>📧 info@kisansetu.com</li>
+					<li>📞 +91 1234567890</li>
+					<li>📍 India</li>
+				</ul>
+			</div>
+			<div class="footer-section">
+				<h4>Follow Us</h4>
+				<div class="social-links">
+					<a href="#" aria-label="Facebook">📘</a>
+					<a href="#" aria-label="Twitter">🐦</a>
+					<a href="#" aria-label="Instagram">📷</a>
+					<a href="#" aria-label="WhatsApp">💬</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>&copy; 2025 Kisan Setu. All rights reserved. Made with 💚 for farmers.</p>
+		</div>
+	</footer>
+	
+	<!-- Scroll to Top Button -->
+	<button class="scroll-to-top" aria-label="Scroll to top" title="Back to top">
+		↑
+	</button>
+</body>
+	<script src="main.js" defer></script>
+</html>
